@@ -1,12 +1,12 @@
 ---
 name: SVK-Log-Filter-Mndrix
 version: !!perl/hash:Module::Build::Version
-  original: 0.0.1
+  original: 0.0.2
   qv: 1
   version:
     - 0
     - 0
-    - 1
+    - 2
 author:
   - 'Michael Hendricks  <michael@ndrix.org>'
 abstract: my pretty-ish output format
@@ -25,7 +25,7 @@ build_requires:
 provides:
   SVK::Log::Filter::Mndrix:
     file: lib/SVK/Log/Filter/Mndrix.pm
-    version: 0.0.1
+    version: 0.0.2
 generated_by: Module::Build version 0.2804
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

@@ -3,14 +3,14 @@ package SVK::Log::Filter::Mndrix;
 use warnings;
 use strict;
 
-use base qw( SVK::Log::Filter );
+use base qw( SVK::Log::Filter::Output );
 use Perl6::Form;
 use Text::Autoformat;
 use Time::Local qw( timegm );
 use POSIX qw( strftime );
 use Term::ReadKey;
 
-our $VERSION = '0.0.1';
+our $VERSION = '0.0.2';
 
 sub revision {
     my ($self, $args) = @_;

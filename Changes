@@ -1,5 +1,11 @@
 ---
+version : 0.0.2
+date    : 2006-08-04T20:43:48Z
+changes :
+    - Derive from SVK::Log::Filter::Output
+
+---
 version : 0.0.1
-date    : Wed Nov 30 11:40:16 MST 2005
+date    : 2006-08-03T20:00:00Z
 changes :
     - First version, released on an unsuspecting world.
