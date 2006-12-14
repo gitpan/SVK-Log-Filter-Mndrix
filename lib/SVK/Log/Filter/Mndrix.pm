@@ -10,7 +10,7 @@ use Time::Local qw( timegm );
 use POSIX qw( strftime );
 use Term::ReadKey;
 
-our $VERSION = '0.0.2';
+our $VERSION = '0.0.3';
 
 sub revision {
     my ($self, $args) = @_;
@@ -20,6 +20,7 @@ sub revision {
 
     my $author  = $props->{'svn:author'} || '(none)';
     my $message = $props->{'svn:log'};
+    $message = q{} if !defined $message;
     my $columns = $stash->{quiet}
                 ? $ENV{COLUMNS} || (GetTerminalSize())[0] || 80
                 : 80
@@ -31,7 +32,7 @@ sub revision {
     }
     my ($first, $rest) = split /\n\n+/, $message, 2;
     $message = autoformat(
-        $first,
+        $first || q{},
         {
             left   => 0,
             right  => $columns - 28,
@@ -58,6 +59,7 @@ sub revision {
     # handle the other form
     my $get_remote_rev = $args->{get_remoterev} || sub {};
     my $remote_rev = $get_remote_rev->($rev) || 'no';
+    $message = ' ' if !defined($message) or !length($message);
     print form
         '-----------------------------[ Revision : {>>>>} ]-----------------------------',
                                                    $rev,

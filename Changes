@@ -1,4 +1,10 @@
 ---
+version : 0.0.3
+date    :
+changes :
+    - Correctly handle a missing svn:log property
+
+---
 version : 0.0.2
 date    : 2006-08-04T20:43:48Z
 changes :
